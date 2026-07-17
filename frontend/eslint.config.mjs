@@ -24,6 +24,8 @@ export default [
       ...js.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+      // Unused locals are worth surfacing but shouldn't block CI for this course.
+      'no-unused-vars': ['warn', { args: 'none', caughtErrors: 'none' }],
     },
   },
 ];
